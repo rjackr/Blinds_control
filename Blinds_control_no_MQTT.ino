@@ -96,6 +96,7 @@ void loop()
         digitalWrite(stepPin, LOW);
         delayMicroseconds(STEP_DELAY);
         current_steps--;
+        ESP.wdtFeed();
       }
     }
     else
@@ -108,6 +109,7 @@ void loop()
         digitalWrite(stepPin, LOW);
         delayMicroseconds(STEP_DELAY);
         current_steps++;
+        ESP.wdtFeed();
       }
     }
     digitalWrite(powerPin, HIGH); // disable the stepper motor
